@@ -4,6 +4,6 @@ class AddBigFiveToUsers < ActiveRecord::Migration
     add_column :users, :agreeableness, :integer
     add_column :users, :extraversion, :integer
     add_column :users, :conscientiousness, :integer
-    add_column :users, :emotional_range, :integer
+    add_column :users, :neuroticism, :integer
   end
 end

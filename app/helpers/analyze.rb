@@ -13,7 +13,7 @@ module Analyzable
 	    :user => ENV['user'],
 	    :password => ENV['pass']
 	  )
-	  
+
 	  profile = JSON.load(response.body)
 
 	  profile["tree"]["children"][0]["children"][0]["children"].each do |trait|
@@ -21,13 +21,14 @@ module Analyzable
 	  end
 
 	  sorted_traits = big_5.sort {|a,b| b[1]<=>a[1]}
-	  			
+
 		sorted_traits.each do |trait_pair|
 			ranked_traits << trait_pair[0]
 		end
 
-		p ranked_traits
+		ranked_traits
 
 	end
+
 
 end

@@ -2,18 +2,19 @@ class User < ActiveRecord::Base
 	include Analyzable
 
 	def match
-		dogs = Dog.all
+
+		my_traits = self.analyze
 
 		matches = []
 
-		dogs.each do |dog|
+		Dog.all.each do |dog|
 			results = dog.analyze
-			if results = self.analyze
+			if results == my_traits
 				matches << dog
 			end
 		end
 
-		matches
+		p matches
 
 	end
 end

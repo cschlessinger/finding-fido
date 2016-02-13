@@ -4,6 +4,6 @@ class AddBigFiveToDogs < ActiveRecord::Migration
     add_column :dogs, :agreeableness, :integer
     add_column :dogs, :extraversion, :integer
     add_column :dogs, :conscientiousness, :integer
-    add_column :dogs, :emotional_range, :integer
+    add_column :dogs, :neuroticism, :integer
   end
 end
