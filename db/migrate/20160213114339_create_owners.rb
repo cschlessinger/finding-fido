@@ -5,7 +5,6 @@ class CreateOwners < ActiveRecord::Migration
   		t.string :phone
   		t.string :email
 	  	t.string :bio
-	  	t.string :image
 	  end
   end
 end

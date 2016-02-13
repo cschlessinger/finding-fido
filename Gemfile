@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 # PostgreSQL driver
 gem 'pg'
 
@@ -16,11 +17,14 @@ gem 'shotgun'
 
 gem 'awesome_print'
 
+gem 'dotenv'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
   gem 'rspec', '~>3.0'
   gem 'capybara'
+
 end
 
 group :test, :development do
