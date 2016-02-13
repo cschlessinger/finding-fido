@@ -8,4 +8,6 @@ get '/owners/:id' do
 	owner.analyze
 end
 
-post '/'
+get '/' do
+	p "*" * 100
+end

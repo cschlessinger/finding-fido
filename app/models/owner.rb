@@ -1,5 +1,7 @@
 class Owner < ActiveRecord::Base
 
+	BASE_URL="https://gateway.watsonplatform.net/personality-insights/api/v2/profile"
+
   def analyze
 
 		content = self.bio
@@ -8,8 +10,8 @@ class Owner < ActiveRecord::Base
   	  response = Excon.post(BASE_URL,
   	    :body => content,
   	    :headers => { "Content-Type" => "text/plain" },
-  	    :user => USER,
-  	    :password => PASS
+  	    :user => ENV['user'],
+  	    :password => ENV['pass']
   	  )
   	  
   	  profile = JSON.load(response.body)
