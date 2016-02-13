@@ -1,13 +1,11 @@
 class Owner < ActiveRecord::Base
 
-	BASE_URL="https://gateway.watsonplatform.net/personality-insights/api/v2/profile"
-
   def analyze
 
 		content = self.bio
   		big_5 = {}
 
-  	  response = Excon.post(BASE_URL,
+  	  response = Excon.post(ENV['url'],
   	    :body => content,
   	    :headers => { "Content-Type" => "text/plain" },
   	    :user => ENV['user'],
