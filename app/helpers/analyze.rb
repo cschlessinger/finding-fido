@@ -5,6 +5,7 @@ module Analyzable
 		content = self.bio
 
 		big_5 = {}
+		ranked_traits = []
 
 	  response = Excon.post(ENV['url'],
 	    :body => content,
@@ -21,7 +22,11 @@ module Analyzable
 
 	  sorted_traits = big_5.sort {|a,b| b[1]<=>a[1]}
 	  			
-		p sorted_traits
+		sorted_traits.each do |trait_pair|
+			ranked_traits << trait_pair[0]
+		end
+
+		p ranked_traits
 
 	end
 

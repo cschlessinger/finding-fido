@@ -4,13 +4,16 @@ class User < ActiveRecord::Base
 	def match
 		dogs = Dog.all
 
-		match = []
+		matches = []
 
 		dogs.each do |dog|
 			results = dog.analyze
 			if results = self.analyze
-				match << dog
+				matches << dog
 			end
 		end
+
+		matches
+
 	end
 end

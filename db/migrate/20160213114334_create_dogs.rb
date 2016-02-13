@@ -1,6 +1,6 @@
 class CreateDogs < ActiveRecord::Migration
   def change
-  	create_table :owners do |t|
+  	create_table :dogs do |t|
   		t.string :name
   		t.string :organization
   		t.string :phone
