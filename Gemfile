@@ -19,6 +19,8 @@ gem 'awesome_print'
 
 gem 'dotenv'
 
+gem 'excon'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
