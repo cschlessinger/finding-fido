@@ -13,7 +13,7 @@ module Analyzable
 	    :user => ENV['user'],
 	    :password => ENV['pass']
 	  )
-	  
+
 	  profile = JSON.load(response.body)
 
 	  profile["tree"]["children"][0]["children"][0]["children"].each do |trait|
@@ -23,5 +23,6 @@ module Analyzable
 	  end
 
 	end
+
 
 end
