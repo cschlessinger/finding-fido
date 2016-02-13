@@ -3,7 +3,7 @@ class Owner < ActiveRecord::Base
   def analyze
 
 		content = self.bio
-  		big_5 = []
+  		big_5 = {}
 
   	  response = Excon.post(BASE_URL,
   	    :body => content,
@@ -15,10 +15,14 @@ class Owner < ActiveRecord::Base
   	  profile = JSON.load(response.body)
 
   	  profile["tree"]["children"][0]["children"][0]["children"].each do |trait|
-  	  	big_5 << trait["percentage"]
+  	  	big_5[trait["name"]] = trait["percentage"]
   	  end
+
+  	  big_5.sort {|a,b| b[1]<=>a[1]}
   	  			
 		end
+
+		big_5
 
   	end
 end

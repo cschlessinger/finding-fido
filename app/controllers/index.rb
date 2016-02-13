@@ -7,3 +7,5 @@ get '/owners/:id' do
 	owner = Owner.find(params[:id])
 	owner.analyze
 end
+
+post '/'
