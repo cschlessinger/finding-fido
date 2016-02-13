@@ -21,7 +21,6 @@ require "sinatra/reloader" if development?
 require 'erb'
 
 require 'json'
-
 require 'dotenv'
 
 # Some helper constants for path-centric logic

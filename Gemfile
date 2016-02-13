@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 # PostgreSQL driver
 gem 'pg'
 
@@ -23,6 +24,7 @@ group :test do
   gem 'rack-test'
   gem 'rspec', '~>3.0'
   gem 'capybara'
+
 end
 
 group :test, :development do
