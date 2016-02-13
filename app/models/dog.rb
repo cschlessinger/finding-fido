@@ -1,3 +1,3 @@
 class Dog < ActiveRecord::Base
-  # Remember to create a migration!
+  include Analyzable
 end

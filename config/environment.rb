@@ -20,6 +20,8 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 
+require 'excon'
+
 require 'json'
 require 'dotenv'
 
