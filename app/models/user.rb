@@ -20,7 +20,6 @@ class User < ActiveRecord::Base
 
   	  big_5.sort {|a,b| b[1]<=>a[1]}
   	  			
-		end
 
 		p big_5
 
