@@ -8,7 +8,7 @@ get '/' do
 	end
 	# @dogs = []
 	# @matches.each {|pup| @dogs << Dog.search(pup)}
-	@dogs = Dog.search("pug")
+	@dogs = Dog.search("")
 	erb :application
 end
 

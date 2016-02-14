@@ -14,7 +14,7 @@ $(document).ready(function() {
     $("#tabs").tabs();
 
     $("#dog_toggle1").show()
-    $("#dog_toggle1").toggle('slow')
+    // $("#dog_toggle1").toggle('slow')
     $("#dog_toggle2").show()
     $("#dog_toggle3").show()
 
