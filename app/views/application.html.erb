@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Finding Fido</title>
+</head>
+<body>
+	<div id= 'container'>
+		<div class='page-header'>
+		<h1 id='heading'>Finding Fido</h1>
+		<img src="http://images.taboola.com/taboola/image/fetch/f_jpg,q_80,h_100,w_300,c_fill,g_face,e_sharpen/http%3A%2F%2Fcdn.taboolasyndication.com%2Flibtrc%2Fstatic%2Fthumbnails%2Fdc9c6eec4591c24df15a26b8f547588e.jpg" id='logo' class='navbar-brand'>
+		</div>
+		<div id="tabs">
+			<ul class="nav nav-tabs">
+  				<li role="presentation"><a href="#tabs-1">Home</a></li>
+  				<li role="presentation"><a href="#tabs-2">Pet Matches</a></li>
+			</ul>
+			<div id='tabs-1'>
+				<h3>Find your perfect pet!</h3>
+				<p>We'll analyze your profile and match you to your perfect adoptable pet!</p>
+				<div class="input-group">
+					<input type='text' class='form-control' placeholder="Name"><%= user name %></input>
+					<input type='email' class='form-control' placeholder="email"><%= user email %></input>
+					<textarea class="form-control" placeholder="Enter your profile here"><% user profile %></textarea>
+				</div>
+			</div>
+			<div id='tabs-2'>
+				<h3>Here are your perfect pets!</h3>
+				<p>You're perfect pet is a <%= dog breed %>.</p>
+				<table class='table table-striped'>
+					<th>Name</th>
+					<th>Picture</th>
+					<th>Bio</th>
+					<% 3.times do %>
+					<tr>
+						<td><%= dog name %></td>
+						<td><%= photo url %></td>
+						<td><%= dog profile%></td>
+					</tr>
+					<% end %>
+				</table>	
+			</div>
+		</div>
+	</div>
+</body>
+</html>
