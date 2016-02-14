@@ -4,7 +4,7 @@ class Dog < ActiveRecord::Base
   after_create :analyze
 
   def self.search(breed)
-		response = Excon.get("http://api.petfinder.com/pet.find?location=san+francisco+CA&breed=#{breed}&format=json&count=25&key=#{ENV['petfinder_key']}")
+		response = Excon.get("http://api.petfinder.com/pet.find?location=san+francisco+CA&breed=#{breed}&format=json&count=5&key=#{ENV['petfinder_key']}")
 		body = JSON.load(response.body)
 
 		# p body["petfinder"]["pets"]["pet"]["name"]["$t"]
