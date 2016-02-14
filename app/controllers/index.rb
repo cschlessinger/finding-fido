@@ -12,7 +12,7 @@ get '/' do
 	# @matches.each do |breed|
 	# 	breed = Dog.find(breed)
 	# end
-	@dogs = Dog.search("pug")
+	@dogs = Dog.search("")
 
 
 	# p @dogs["31947859"]

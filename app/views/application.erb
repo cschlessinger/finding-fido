@@ -24,21 +24,61 @@
 				</div>
 			</div>
 			<div id='tabs-2'>
-				<h3>Here are your perfect pets!</h3>
-				<p>You're perfect pet is a <%= @matches %>.</p>
-				<table class='table table-striped'>
+				<center><h3>Here are your perfect pets!</h3><center>
+				<center><h2>Your top three perfect pets are: <%#= @matches %></h2></center>
+				<!-- Toggle matching dogs here -->
+				<%dog_sample = @matches.sample(3)%>
+				<table class='table table-striped'  id="dog_toggle1" style="display:none">
 					<th>Name</th>
 					<th>Bio</th>
 					<th>Picture</th>
-					<% @dogs.each do |dog| %>
+					<h3 id="dog_sample1"><p><%=dog_sample[0]%></p></h3>
+						<div><%@dogs = Dog.search("#{dog_sample[0]}")%>
+							<% @dogs.each do |dog| %>
 						<tr>
 							<td><%= dog[0] %></td>
 							<td><%= dog[1] %> <a href="https://www.petfinder.com/petdetail/<%=dog[3]%>" target="_blank">See more information</a></td>
 
 							<td><img src=<%= dog[2]%>/></td>
 						</tr>
-					<% end %>
-				</table>	
+							<% end %>
+							</div>
+							</table>
+					<table class='table table-striped'  id="dog_toggle2" style="display:none">
+					<th>Name</th>
+					<th>Bio</th>
+					<th>Picture</th>
+					<h3 id="dog_sample2"><p><%=dog_sample[1]%></p></h3>
+						<div><%@dogs = Dog.search("#{dog_sample[1]}")%>
+							<% @dogs.each do |dog| %>
+						<tr>
+							<td><%= dog[0] %></td>
+							<td><%= dog[1] %> <a href="https://www.petfinder.com/petdetail/<%=dog[3]%>" target="_blank">See more information</a></td>
+
+							<td><img src=<%= dog[2]%>/></td>
+						</tr>
+							<% end %>
+							</div>
+							</table>
+					<table class='table table-striped' id="dog_toggle3" style="display:none">
+					<th>Name</th>
+					<th>Bio</th>
+					<th>Picture</th>
+					<h3 id="dog_sample3"><p><%=dog_sample[2]%></p></h3>
+						<div><%@dogs = Dog.search("#{dog_sample[2]}")%>
+							<% @dogs.each do |dog| %>
+						<tr>
+							<td><%=dog[0] %></td>
+							<td><%= dog[1] %> <a href="https://www.petfinder.com/petdetail/<%=dog[3]%>" target="_blank">See more information</a></td>
+
+							<td><img src=<%= dog[2]%>/></td>
+						</tr>
+							<% end %>
+						</div>
+						</table>
+					
+					<!-- End toggle matching dogs here -->
+				
 			</div>
 		</div>
 	</div>
