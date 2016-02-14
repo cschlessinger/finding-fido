@@ -2,13 +2,13 @@ get '/' do
 
 	session.delete(:errors)
 	if session[:user_id]
-		@matches = User.find(session[:user_id]).analyze
+		@matches = User.find(session[:user_id]).match
 	else
-		@matches = User.first.analyze
+		@matches = User.first.match
 	end
 	# @dogs = []
 	# @matches.each {|pup| @dogs << Dog.search(pup)}
-	@dogs = Dog.search("")
+	@dogs = Dog.search("pug")
 	erb :application
 end
 
