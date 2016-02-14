@@ -5,11 +5,11 @@
 </head>
 <body>
 	<div id='container'>
-		<div class='page-header' id='heading'>
-			<h1>Finding Fido</h1>
+		<div id='heading'>
+			<h1 id='logo'>Finding Fido</h1>
 		</div>
 		<main>
-			<%if session[:user_id] == nil%>
+			<% if session[:user_id] == nil %>
 				<h3>Find your perfect pet!</h3>
 				<p>We'll analyze your profile and match you to your perfect adoptable pet!</p>
 				<div class="input-group">
@@ -19,27 +19,31 @@
 						<textarea class="form-control padded" name="bio" placeholder="Enter a writing sample about yourself! *At least 300 words, please"></textarea>
 						<input type="submit" class="padded" value="Submit">
 					</form>
-					<%if session[:errors]%>
-					<%=session[:errors]%>
+					<% if session[:errors] %>
+						<%= session[:errors] %>
 					<%end%>
 				</div>
-			<%else%>
+			<% else %>
 				<a href="/users">Start Over</a>
-				<h3>Here are your perfect pets!</h3>
-				<p>Your perfect pet is a <%= @matches %>.</p>
-				<table class='table table-striped'>
-					<th>Picture</th>
-					<th>Name</th>
-					<th>Bio</th>
-					<% @dogs.each do |dog| %>
-						<tr>
-							<td><img src=<%= dog[2]%>/></td>
-							<td><%= dog[0] %></td>
-							<td><%= dog[1] %> <a href="https://www.petfinder.com/petdetail/<%=dog[3]%>" target="_blank">See more information</a></td>
-						</tr>
-					<% end %>
-				</table>
-			<%end%>
+				<% if @matches.length == 0 %>
+					<h3>Oops, no matches! Please enter a longer text sample.</h3>
+				<% else %>
+					<h3>Here are your perfect pets!</h3>
+					<p>Your perfect pet is a <%= @matches %>.</p>
+					<table class='table table-striped'>
+						<th>Picture</th>
+						<th>Name</th>
+						<th>Bio</th>
+						<% @dogs.each do |dog| %>
+							<tr>
+								<td><img src=<%= dog[2]%>/></td>
+								<td><%= dog[0] %></td>
+								<td><%= dog[1] %> <a href="https://www.petfinder.com/petdetail/<%=dog[3]%>" target="_blank">See more information</a></td>
+							</tr>
+						<% end %>
+					</table>
+				<% end %>
+			<% end %>
 		</main>
 	</div>
 </body>
