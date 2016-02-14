@@ -15,7 +15,7 @@ end
 post '/users' do
 	@user = User.new(params)
 	if @user.bio.length < 300
-		session[:errors] = "We need a bio of at least 300 words to match you with your perfect pet!"
+		session[:errors] = "We need a sample of at least 300 words to match you with your perfect pet!"
 		erb :application
 	else
 		@user.save
@@ -23,3 +23,9 @@ post '/users' do
 		redirect '/'
 	end
 end
+
+get '/users' do
+	session.delete(:user_id)
+	redirect '/'
+end
+
