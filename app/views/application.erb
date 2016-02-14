@@ -27,14 +27,14 @@
 			<h3>Here are your perfect pets!</h3>
 			<p>Your perfect pet is a <%= @matches %>.</p>
 			<table class='table table-striped'>
+				<th>Picture</th>
 				<th>Name</th>
 				<th>Bio</th>
-				<th>Picture</th>
 				<% @dogs.each do |dog| %>
 					<tr>
+						<td><img src=<%= dog[2]%>/></td>
 						<td><%= dog[0] %></td>
-						<td><%= dog[1] %></td>
-						<img src="#{<%= dog[2]%>}">
+						<td><%= dog[1] %> <a href="https://www.petfinder.com/petdetail/<%=dog[3]%>" target="_blank">See more information</a></td>
 					</tr>
 				<% end %>
 			</table>
