@@ -28,15 +28,15 @@
 				<p>You're perfect pet is a <%= @matches %>.</p>
 				<table class='table table-striped'>
 					<th>Name</th>
-					<th>Picture</th>
 					<th>Bio</th>
-					<%# 3.times do %>
-					<tr>
-						<td><%#= dog name %></td>
-						<td><%#= photo url %></td>
-						<td><%#= dog profile%></td>
-					</tr>
-					<%# end %>
+					<th>Picture</th>
+					<% @dogs.each do |dog| %>
+						<tr>
+							<td><%= dog[0] %></td>
+							<td><%= dog[1] %></td>
+							<img src="#{<%= dog[2]%>}">
+						</tr>
+					<% end %>
 				</table>	
 			</div>
 		</div>
