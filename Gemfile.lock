@@ -14,6 +14,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (6.0.0)
     awesome_print (1.6.1)
     backports (3.6.4)
@@ -39,6 +40,9 @@ GEM
     multi_json (1.10.1)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    petfinder (1.0.3)
+      excon (~> 0.26)
+      nokogiri (~> 1.6)
     pg (0.18.1)
     rack (1.6.0)
     rack-protection (1.5.3)
@@ -87,12 +91,14 @@ PLATFORMS
 DEPENDENCIES
   activerecord (~> 4.2.0)
   activesupport (~> 4.2.0)
+  addressable
   awesome_print
   capybara
   dotenv
   excon
   factory_girl
   faker
+  petfinder
   pg
   rack-test
   rake
