@@ -24,10 +24,11 @@
 	}
 	ul {
 		position: relative;
-		height: 25%;
+		height: 3em;
 	}
 	li {
 		position: relative;
+		height: 3em;
 		left: -20%;
 	}
 	#tabs-1, #tabs-2{
