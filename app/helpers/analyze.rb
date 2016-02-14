@@ -4,9 +4,6 @@ module Analyzable
 
 		content = self.bio
 
-		big_5 = {}
-		ranked_traits = []
-
 		if self.openness == nil #this was added to work with artificially created seed data for demo purposes and avoid blocking from 'after_create' method in Dog model
 	  	response = Excon.post(ENV['ibm_url'],
 	    :body => content,
