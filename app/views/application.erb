@@ -33,8 +33,9 @@
 					<% @dogs.each do |dog| %>
 						<tr>
 							<td><%= dog[0] %></td>
-							<td><%= dog[1] %></td>
-							<img src="#{<%= dog[2]%>}">
+							<td><%= dog[1] %> <a href="https://www.petfinder.com/petdetail/<%=dog[3]%>" target="_blank">See more information</a></td>
+
+							<td><img src=<%= dog[2]%>/></td>
 						</tr>
 					<% end %>
 				</table>	
