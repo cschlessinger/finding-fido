@@ -1,10 +1,6 @@
 class User < ActiveRecord::Base
-	before
 	include Analyzable
+	after_create :analyze
 
-	def match
 
-		
-
-	end
 end
