@@ -18,25 +18,25 @@
 				<h3>Find your perfect pet!</h3>
 				<p>We'll analyze your profile and match you to your perfect adoptable pet!</p>
 				<div class="input-group">
-					<input type='text' class='form-control' placeholder="Name"><%= user name %></input>
-					<input type='email' class='form-control' placeholder="email"><%= user email %></input>
-					<textarea class="form-control" placeholder="Enter your profile here"><% user profile %></textarea>
+					<input type='text' class='form-control' placeholder="Name"><%#= user.name %></input>
+					<input type='email' class='form-control' placeholder="email"><%#= user.email %></input>
+					<textarea class="form-control" placeholder="Enter your profile here"><%# user profile %></textarea>
 				</div>
 			</div>
 			<div id='tabs-2'>
 				<h3>Here are your perfect pets!</h3>
-				<p>You're perfect pet is a <%= dog breed %>.</p>
+				<p>You're perfect pet is a <%#= dog.breed %>.</p>
 				<table class='table table-striped'>
 					<th>Name</th>
 					<th>Picture</th>
 					<th>Bio</th>
-					<% 3.times do %>
+					<%# 3.times do %>
 					<tr>
-						<td><%= dog name %></td>
-						<td><%= photo url %></td>
-						<td><%= dog profile%></td>
+						<td><%#= dog name %></td>
+						<td><%#= photo url %></td>
+						<td><%#= dog profile%></td>
 					</tr>
-					<% end %>
+					<%# end %>
 				</table>	
 			</div>
 		</div>

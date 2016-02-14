@@ -11,6 +11,6 @@ $(document).ready(function() {
  //= require_tree .
 
   $(function() {
-    		$( "#tabs" ).tabs();
- 		});
+    $("#tabs").tabs();
+ 	});
 });
