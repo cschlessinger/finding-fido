@@ -1,37 +1,47 @@
-	* {
-		margin: 0px;
-		padding: 0px
-	}
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Raleway', sans-serif;
+}
 
-	#container {
-		margin: 5px;
-		padding: 5px;
-	}
-	#heading {
-		color: green;
-		left: 100px;
-		padding-left: 130px;
-		font-weight: bold;
-		font-size: 50px;
-	}
-	#logo {
-		display: inline;
-		position: relative;
-		left: 600px;
-		top: -110px;
-		height: 130px;
-		width: 300px;
-	}
-	ul {
-		position: relative;
-		height: 3em;
-	}
-	li {
-		position: relative;
-		height: 3em;
-		left: -20%;
-	}
-	#tabs-1, #tabs-2{
-		padding-top: 0px;
-		margin-top: 0px;
-	}
+#heading {
+	margin-top: -40px;
+	padding-left: 130px;
+	background-image: url(https://wallpaperscraft.com/image/puppy_grass_running_walking_dog_95389_2560x1600.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	height: 20em;
+	background-position: 0px -94px;
+}
+
+h1 {
+	margin: 0;
+	color: black;
+	left: 100px;
+	font-size: 60px;
+	font-weight: bold;
+	padding-top: 122px;
+}
+
+main {
+	padding: 5px;
+	margin: 5px auto;
+}
+
+#logo {
+	display: inline;
+	position: relative;
+	left: 600px;
+	top: -110px;
+	height: 130px;
+	width: 300px;
+}
+
+.padded {
+	margin: 5px;
+}
+
+.right-angle {
+  border-radius: 0;
+}
