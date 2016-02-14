@@ -9,5 +9,6 @@
 # end
 
 get '/' do
+	@matches = User.first.match
 	erb :application
 end
