@@ -17,12 +17,10 @@ module Analyzable
 	  profile = JSON.load(response.body)
 
 	  profile["tree"]["children"][0]["children"][0]["children"].each do |trait|
-	  	# big_5[trait["name"]] = trait["percentage"]
-		  self[trait["name"]] = trait["percentage"]
+		  self[trait["id"].downcase] = trait["percentage"] * 100
 		  self.save
 	  end
 
 	end
-
 
 end
