@@ -6,20 +6,19 @@ module Analyzable
 
 		big_5 = {}
 		ranked_traits = []
- 		if self.openness == nil || self.agreeableness == nil || self.neuroticism == nil || self.extraversion == nil || self.conscientiousness == nil
-		  response = Excon.post(ENV['url'],
-		    :body => content,
-		    :headers => { "Content-Type" => "text/plain" },
-		    :user => ENV['user'],
-		    :password => ENV['pass']
-		  )
 
+		if self.openness == nil #this was added to work with artificially created seed data for demo purposes and avoid blocking from 'after_create' method in Dog model
+	  	response = Excon.post(ENV['ibm_url'],
+	    :body => content,
+	    :headers => { "Content-Type" => "text/plain" },
+	    :user => ENV['ibm_user'],
+	    :password => ENV['ibm_pass']
+	  )
 		  profile = JSON.load(response.body)
 
-
-		  profile["tree"]["children"][0]["children"][0]["children"].each do |trait|
-			  self.update(trait["id"].downcase => trait["percentage"] * 10)
-	  	end
+			profile["tree"]["children"][0]["children"][0]["children"].each do |trait|
+				 self.update(trait["id"].downcase => trait["percentage"] * 10)
+			end
 		end
 	end
 

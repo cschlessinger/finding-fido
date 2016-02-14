@@ -21,6 +21,10 @@ gem 'dotenv'
 
 gem 'excon'
 
+gem 'petfinder'
+
+gem 'addressable', :require => "addressable/uri"
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
