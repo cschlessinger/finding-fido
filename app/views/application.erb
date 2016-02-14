@@ -4,41 +4,43 @@
 	<title>Finding Fido</title>
 </head>
 <body>
-	<div id= 'container'>
-		<div class='page-header'>
-			<h1 id='heading'>Finding Fido</h1>
-			<img src="http://images.taboola.com/taboola/image/fetch/f_jpg,q_80,h_100,w_300,c_fill,g_face,e_sharpen/http%3A%2F%2Fcdn.taboolasyndication.com%2Flibtrc%2Fstatic%2Fthumbnails%2Fdc9c6eec4591c24df15a26b8f547588e.jpg" id='logo' class='navbar-brand'>
+	<div id='container'>
+		<div class='page-header' id='heading'>
+			<h1>Finding Fido</h1>
+			<!-- <img src="http://images.taboola.com/taboola/image/fetch/f_jpg,q_80,h_100,w_300,c_fill,g_face,e_sharpen/http%3A%2F%2Fcdn.taboolasyndication.com%2Flibtrc%2Fstatic%2Fthumbnails%2Fdc9c6eec4591c24df15a26b8f547588e.jpg" id='logo' class='navbar-brand'> -->
 		</div>
-		<%if session[:user_id] == nil%>
-			<h3>Find your perfect pet!</h3>
-			<p>We'll analyze your profile and match you to your perfect adoptable pet!</p>
-			<div class="input-group">
-				<form action="/users" method="POST">
-					<input type="text" class="form-control" name="name" placeholder="Name"></input>
-					<input type="email" class="form-control" name="email" placeholder="Email"></input>
-					<textarea class="form-control" name="bio" placeholder="Enter a writing sample about yourself! *At least 300 words, please"></textarea>
-					<input type="submit" value="Submit">
-				</form>
-				<%if session[:errors]%>
-				<%=session[:errors]%>
-				<%end%>
-			</div>
-		<%else%>
-			<h3>Here are your perfect pets!</h3>
-			<p>Your perfect pet is a <%= @matches %>.</p>
-			<table class='table table-striped'>
-				<th>Picture</th>
-				<th>Name</th>
-				<th>Bio</th>
-				<% @dogs.each do |dog| %>
-					<tr>
-						<td><img src=<%= dog[2]%>/></td>
-						<td><%= dog[0] %></td>
-						<td><%= dog[1] %> <a href="https://www.petfinder.com/petdetail/<%=dog[3]%>" target="_blank">See more information</a></td>
-					</tr>
-				<% end %>
-			</table>
-		<%end%>
+		<main>
+			<%if session[:user_id] == nil%>
+				<h3>Find your perfect pet!</h3>
+				<p>We'll analyze your profile and match you to your perfect adoptable pet!</p>
+				<div class="input-group">
+					<form action="/users" method="POST">
+						<input type="text" class="form-control padded right-angle" name="name" placeholder="Name"></input>
+						<input type="email" class="form-control padded" name="email" placeholder="Email"></input>
+						<textarea class="form-control padded" name="bio" placeholder="Enter a writing sample about yourself! *At least 300 words, please"></textarea>
+						<input type="submit" class="padded" value="Submit">
+					</form>
+					<%if session[:errors]%>
+					<%=session[:errors]%>
+					<%end%>
+				</div>
+			<%else%>
+				<h3>Here are your perfect pets!</h3>
+				<p>Your perfect pet is a <%= @matches %>.</p>
+				<table class='table table-striped'>
+					<th>Picture</th>
+					<th>Name</th>
+					<th>Bio</th>
+					<% @dogs.each do |dog| %>
+						<tr>
+							<td><img src=<%= dog[2]%>/></td>
+							<td><%= dog[0] %></td>
+							<td><%= dog[1] %> <a href="https://www.petfinder.com/petdetail/<%=dog[3]%>" target="_blank">See more information</a></td>
+						</tr>
+					<% end %>
+				</table>
+			<%end%>
+		</main>
 	</div>
 </body>
 </html>
