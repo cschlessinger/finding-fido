@@ -7,7 +7,6 @@
 	<div id='container'>
 		<div class='page-header' id='heading'>
 			<h1>Finding Fido</h1>
-			<!-- <img src="http://images.taboola.com/taboola/image/fetch/f_jpg,q_80,h_100,w_300,c_fill,g_face,e_sharpen/http%3A%2F%2Fcdn.taboolasyndication.com%2Flibtrc%2Fstatic%2Fthumbnails%2Fdc9c6eec4591c24df15a26b8f547588e.jpg" id='logo' class='navbar-brand'> -->
 		</div>
 		<main>
 			<%if session[:user_id] == nil%>
@@ -25,6 +24,7 @@
 					<%end%>
 				</div>
 			<%else%>
+				<a href="/users">Start Over</a>
 				<h3>Here are your perfect pets!</h3>
 				<p>Your perfect pet is a <%= @matches %>.</p>
 				<table class='table table-striped'>
