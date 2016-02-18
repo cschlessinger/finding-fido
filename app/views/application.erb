@@ -22,7 +22,7 @@
 					<input type="submit" value="Submit">
 				</form>
 				<%if session[:errors]%>
-					<%=session[:errors]%>
+				<%=session[:errors]%>
 				<%end%>
 			</div>
 
@@ -38,10 +38,10 @@
 				<th>Name</th>
 				<th>Bio</th>
 				<h3 id="dog_sample1"><p><%=dog_sample[0]%></p></h3>
-				<div><%@dog1 = Dog.search("#{dog_sample[1]}")%>
-					<% @dog1.each do |dog| %>
+				<div><%dog1 = Dog.search("#{dog_sample[0]}")%>
+					<% dog1.each do |dog| %>
 					<tr>
-					<td><img src=<%= dog[2]%>/></td>
+						<td><img src=<%= dog[2]%>/></td>
 						<td><%= dog[0] %></td>
 						<td><%= dog[1] %> <a href="https://www.petfinder.com/petdetail/<%=dog[3]%>" target="_blank">See more information</a></td>
 
@@ -54,10 +54,10 @@
 				<th>Name</th>
 				<th>Bio</th>
 				<h3 id="dog_sample2"><p><%=dog_sample[1]%></p></h3>
-				<div><%@dog2 = Dog.search("#{dog_sample[1]}")%>
-					<% @dog2.each do |dog| %>
+				<div><%dog2 = Dog.search("#{dog_sample[1]}")%>
+					<% dog2.each do |dog| %>
 					<tr>
-					<td><img src=<%= dog[2]%>/></td>
+						<td><img src=<%= dog[2]%>/></td>
 						<td><%= dog[0] %></td>
 						<td><%= dog[1] %> <a href="https://www.petfinder.com/petdetail/<%=dog[3]%>" target="_blank">See more information</a></td>
 
@@ -70,10 +70,10 @@
 				<th>Name</th>
 				<th>Bio</th>
 				<h3 id="dog_sample3"><p><%=dog_sample[2]%></p></h3>
-				<div><%@dog3 = Dog.search("#{dog_sample[2]}")%>
-					<% @dog3.each do |dog| %>
+				<div><%dog3 = Dog.search("#{dog_sample[2]}")%>
+					<% dog3.each do |dog| %>
 					<tr>
-					<td><img src=<%= dog[2]%>/></td>
+						<td><img src=<%= dog[2]%>/></td>
 						<td><%=dog[0] %></td>
 						<td><%= dog[1] %> <a href="https://www.petfinder.com/petdetail/<%=dog[3]%>" target="_blank">See more information</a></td>
 
@@ -83,25 +83,30 @@
 			</table>
 
 			<table class='table table-striped'>
-            <th>Picture</th>
-            <th>Name</th>
-            <th>Bio</th>
-            <% @dogs.each do |dog| %>
-              <tr>
-                <td><img src=<%= dog[2]%>/></td>
-                <td><%= dog[0] %></td>
-                <td><%= dog[1] %> <a href="https://www.petfinder.com/petdetail/<%=dog[3]%>" target="_blank">See more information</a></td>
-              </tr>
-            <% end %>
-          </table>
+				<th>Picture</th>
+				<th>Name</th>
+				<th>Bio</th>
+				<h3><p>More of your pet matches!</p></h3>
+				<!-- <h3 id="dog_sample4"><p><#%=dog_sample[#@matches.length-1]%></p></h3> -->
+				<h3 id="dog_sample4"><p><%=dog_sample[3]%></p></h3>
+				<div><%dog4 = Dog.search("#{dog_sample[-1]}")%>
+					<% dog4.each do |dog| %>
+					<tr>
+						<td><img src=<%= dog[2]%>/></td>
+						<td><%= dog[0] %></td>
+						<td><%= dog[1] %> <a href="https://www.petfinder.com/petdetail/<%=dog[3]%>" target="_blank">See more information</a></td>
 
-			<!-- End toggle matching dogs here -->
+					</tr>
+					<% end %>
+				</table>
 
+				<!-- End toggle matching dogs here -->
+
+			</div>
 		</div>
-	</div>
-	<%end%>
+		<%end%>
 
-</div>
+	</div>
 </main>
 </body>
 </html>
